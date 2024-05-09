@@ -30,7 +30,7 @@ export default function PatronList() {
           {patrons.map((p) => (
             <tr key={`patrons-${p.id}`}>
               <th scope="row">{p.id}</th>
-              <td>{p.firstName + " " + p.lastName}</td>
+              <td>{`${p.firstName} ${p.lastName}`}</td>
               <td>{p.address}</td>
               <td>{p.email}</td>
               <td>{p.isActive ? "Active" : "Inactive"}</td>
