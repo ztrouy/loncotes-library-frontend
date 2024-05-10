@@ -19,7 +19,7 @@ export default function PatronDetails() {
 
   return (
     <div className="container">
-      <h2>{`${patron.firstName} ${patron.lastName}`}</h2>
+      <h2 className="mt-3">{`${patron.firstName} ${patron.lastName}`}</h2>
       <Table>
         <tbody>
           <tr>

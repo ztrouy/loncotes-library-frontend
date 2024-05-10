@@ -19,7 +19,7 @@ export default function MaterialDetails() {
 
   return (
     <div className="container">
-      <h2>{material.materialName}</h2>
+      <h2 className="mt-3">{material.materialName}</h2>
       <Table>
         <tbody>
           <tr>
