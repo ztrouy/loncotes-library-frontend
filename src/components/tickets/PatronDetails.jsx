@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Table } from "reactstrap";
 import { getPatron } from "../../data/patronsData";
 
@@ -19,7 +19,10 @@ export default function PatronDetails() {
 
   return (
     <div className="container">
-      <h2 className="mt-3">{`${patron.firstName} ${patron.lastName}`}</h2>
+      <div className="sub-menu bg-light">
+        <h2 className="mt-3">{`${patron.firstName} ${patron.lastName}`}</h2>
+        <Link to={`/patrons/${id}/edit`}>Edit</Link>
+      </div>
       <Table>
         <tbody>
           <tr>
