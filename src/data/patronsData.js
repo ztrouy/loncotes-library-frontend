@@ -19,3 +19,11 @@ export const updatePatron = (patronUpdate) => {
 
     return fetch(`${_apiUrl}/${patronUpdate.id}`, putOptions).then(res => res.json());
 };
+
+export const deactivatePatron = (id) => {
+    const putOptions = {
+        method: "PUT"
+    };
+
+    return fetch(`${_apiUrl}/${id}/deactivate`, putOptions).then(res => res.json());
+}
