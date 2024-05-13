@@ -33,7 +33,7 @@ export default function CreateMaterial() {
 
   return (
     <div className="container">
-      <h4>Add a New Material</h4>
+      <h4 className="mt-3">Add a New Material</h4>
       <Form>
         <FormGroup>
           <Label htmlFor="materialName">Title</Label>
@@ -57,9 +57,9 @@ export default function CreateMaterial() {
               setGenreId(parseInt(e.target.value));
             }}
           >
-            <option value="0">Choose a Genre</option>
+            <option value="0" key={"g-0"}>Choose a Genre</option>
             {genres.map((g) => (
-              <option value={g.id}>{g.name}</option>
+              <option value={g.id} key={`g-${g.id}`}>{g.name}</option>
             ))}
           </Input>
         </FormGroup>
@@ -73,9 +73,9 @@ export default function CreateMaterial() {
               setMaterialTypeId(parseInt(e.target.value));
             }}
           >
-            <option value="0">Choose a Material Type</option>
+            <option value="0" key={"mt-0"}>Choose a Material Type</option>
             {materialTypes.map((mt) => (
-              <option value={mt.id}>{mt.name}</option>
+              <option value={mt.id} key={`mt-${mt.id}`}>{mt.name}</option>
             ))}
           </Input>
         </FormGroup>

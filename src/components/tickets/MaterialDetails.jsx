@@ -19,7 +19,7 @@ export default function MaterialDetails() {
 
   return (
     <div className="container">
-      <h2>{material.materialName}</h2>
+      <h2 className="mt-3">{material.materialName}</h2>
       <Table>
         <tbody>
           <tr>
@@ -58,7 +58,7 @@ export default function MaterialDetails() {
                 </td>
                 <td>{co.checkoutDate?.split("T")[0]}</td>
                 <td>{co.returnDate?.split("T")[0] || "Checked Out"}</td>
-                <td>{co.lateFee || "N/A"}</td>
+                <td>{co.lateFee?.toLocaleString("en-US", {style: "currency", currency: "USD"}) || "N/A"}</td>
               </tr>
             ))}
           </tbody>
