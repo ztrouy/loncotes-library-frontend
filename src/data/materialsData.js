@@ -16,3 +16,9 @@ export const createMaterial = (material) => {
     body: JSON.stringify(material),
   }).then((res) => res.json());
 };
+
+export const removeMaterial = (id) => {
+  const deleteOptions = {method: "DELETE"}
+
+  return fetch(`${_apiUrl}/${id}`, deleteOptions).then(res => res.json())
+}
