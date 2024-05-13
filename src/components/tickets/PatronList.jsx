@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Table } from "reactstrap";
 import { Link } from "react-router-dom";
-import { deactivatePatron, getPatrons } from "../../data/patronsData";
+import { deactivatePatron, getPatrons, reactivatePatron } from "../../data/patronsData";
 
 export default function PatronList() {
   const [patrons, setPatrons] = useState([]);
@@ -12,6 +12,12 @@ export default function PatronList() {
 
   const handleDeactivate = (patron) => {
     deactivatePatron(patron.id).then(() => {
+      getPatrons().then(setPatrons)
+    })
+  }
+
+  const handleReactivate = (patron) => {
+    reactivatePatron(patron.id).then(() => {
       getPatrons().then(setPatrons)
     })
   }
@@ -45,7 +51,11 @@ export default function PatronList() {
                 <Link to={`${p.id}`}>Details</Link>
               </td>
               <td>
-                {p.isActive ? <Button onClick={() => handleDeactivate(p)}>Deactivate</Button> : ""}
+                {p.isActive ? (
+                  <Button onClick={() => handleDeactivate(p)}>Deactivate</Button>
+                ) : (
+                  <Button onClick={() => handleReactivate(p)}>Reactivate</Button>
+                )}
               </td>
             </tr>
           ))}
