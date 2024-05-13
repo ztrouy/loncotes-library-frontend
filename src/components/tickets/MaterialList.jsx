@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Table } from "reactstrap";
-import { getMaterials } from "../../data/materialsData";
+import { Button, Table } from "reactstrap";
+import { getMaterials, removeMaterial } from "../../data/materialsData";
 import { Link } from "react-router-dom";
 
 export default function MaterialList() {
@@ -9,6 +9,12 @@ export default function MaterialList() {
   useEffect(() => {
     getMaterials().then(setMaterials);
   }, []);
+
+  const handleRemove = (id) => {
+    removeMaterial(id).then(() =>{
+      getMaterials().then(setMaterials)
+    })
+  }
 
   return (
     <div className="container">
@@ -24,6 +30,7 @@ export default function MaterialList() {
             <th>Type</th>
             <th>Genre</th>
             <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +42,9 @@ export default function MaterialList() {
               <td>{m.genre.name}</td>
               <td>
                 <Link to={`${m.id}`}>Details</Link>
+              </td>
+              <td>
+                <Button onClick={() => handleRemove(m.id)}>Remove</Button>
               </td>
             </tr>
           ))}
