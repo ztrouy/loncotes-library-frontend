@@ -27,3 +27,11 @@ export const deactivatePatron = (id) => {
 
     return fetch(`${_apiUrl}/${id}/deactivate`, putOptions).then(res => res.json());
 }
+
+export const reactivatePatron = (id) => {
+    const putOptions = {
+        method: "PUT"
+    };
+
+    return fetch(`${_apiUrl}/${id}/reactivate`, putOptions).then(res => res.json());
+}
