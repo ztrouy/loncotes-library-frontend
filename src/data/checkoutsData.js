@@ -9,3 +9,15 @@ export const returnCheckout = (id) => {
 
     return fetch(`${_apiUrl}/${id}/return`, putOptions).then(res => res.json())
 }
+
+export const createCheckout = (checkout) => {
+    const postOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(checkout)
+    }
+
+    return fetch(_apiUrl, postOptions).then(res => res.json());
+};
