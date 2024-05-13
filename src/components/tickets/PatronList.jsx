@@ -25,7 +25,7 @@ export default function PatronList() {
   return (
     <div className="container">
       <div className="sub-menu bg-light">
-        <h4>Patrons</h4>
+        <h4 className="mt-3">Patrons</h4>
       </div>
       <Table>
         <thead>
