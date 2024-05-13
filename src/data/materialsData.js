@@ -38,5 +38,5 @@ export const createMaterial = (material) => {
 export const removeMaterial = (id) => {
   const deleteOptions = {method: "DELETE"}
 
-  return fetch(`${_apiUrl}/${id}`, deleteOptions).then(res => res.json())
+  return fetch(`${_apiUrl}/${id}`, deleteOptions)
 }

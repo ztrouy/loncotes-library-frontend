@@ -11,7 +11,7 @@ export const getOverdueCheckouts = () => {
 export const returnCheckout = (id) => {
     const putOptions = {method: "PUT"}
 
-    return fetch(`${_apiUrl}/${id}/return`, putOptions).then(res => res.json())
+    return fetch(`${_apiUrl}/${id}/return`, putOptions)
 }
 
 export const createCheckout = (checkout) => {

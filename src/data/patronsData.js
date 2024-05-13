@@ -17,7 +17,7 @@ export const updatePatron = (patronUpdate) => {
         body: JSON.stringify(patronUpdate)
     };
 
-    return fetch(`${_apiUrl}/${patronUpdate.id}`, putOptions).then(res => res.json());
+    return fetch(`${_apiUrl}/${patronUpdate.id}`, putOptions);
 };
 
 export const deactivatePatron = (id) => {
@@ -25,7 +25,7 @@ export const deactivatePatron = (id) => {
         method: "PUT"
     };
 
-    return fetch(`${_apiUrl}/${id}/deactivate`, putOptions).then(res => res.json());
+    return fetch(`${_apiUrl}/${id}/deactivate`, putOptions)
 }
 
 export const reactivatePatron = (id) => {
@@ -33,5 +33,5 @@ export const reactivatePatron = (id) => {
         method: "PUT"
     };
 
-    return fetch(`${_apiUrl}/${id}/reactivate`, putOptions).then(res => res.json());
+    return fetch(`${_apiUrl}/${id}/reactivate`, putOptions)
 }
