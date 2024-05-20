@@ -18,6 +18,7 @@ This website aims to make it easy for librarians to:
 - ASP.NET
 - ADO.NET
 - PostgreSQL 16
+- Entity Framework Core
 - Bootstrap
 - Reactstrap
 - CSS3
