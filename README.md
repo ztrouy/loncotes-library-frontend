@@ -16,6 +16,8 @@ This website aims to make it easy for librarians to:
 - JavaScript
 - C#
 - ASP.NET
+- ADO.NET
+- PostgreSQL 16
 - Bootstrap
 - Reactstrap
 - CSS3
